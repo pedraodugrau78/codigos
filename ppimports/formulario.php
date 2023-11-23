@@ -2,23 +2,18 @@
 
     if(isset($_POST['submit']))
     {
-        // print_r('Nome: ' . $_POST['nome']);
-        // print_r('<br>');
-        // print_r('Email: ' . $_POST['email']);
-        // print_r('<br>');
-        // print_r('senha: ' . $_POST['senha']);
-        // print_r('<br>');
+       
         
 
         include_once('config.php');
 
         $nome = $_POST['nome'];
-        $email = $_POST['email'];
         $senha = $_POST['senha'];
+        $email = $_POST['email'];
        
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,senha,email,telefone,sexo,data_nasc,cidade,estado,endereco) 
-        VALUES ('$nome','$senha','$email',)");
+        $result = mysqli_query($conexao, "INSERT INTO clientes(nome,senha,email) 
+        VALUES ('$nome','$senha','$email')");
 
         header('Location: login.php');
     }
